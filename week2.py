@@ -64,24 +64,36 @@ plt.show()
 
 #
 
-x_positions = [1, 2, 3, 4]
-y_positions = [5, 4, 3, 2]
-quantities = [10, 20, 30, 40]
-
-plt.figure(figsize=(8, 6))
-plt.scatter(x_positions, y_positions, s=quantities, alpha=0.5,marker="+",c='red')
-
-plt.title('Quantities with X and Y Positions')
-plt.xlabel('X Position')
-plt.ylabel('Y Position')
-plt.show()
-
-#
-
 data = np.random.normal(170, 10, 1000)
 
 plt.hist(data, bins=30, color='skyblue', edgecolor='black')
 plt.xlabel('Values')
 plt.ylabel('Frequency')
 plt.title('Basic Histogram')
+plt.show()
+
+
+
+
+# 
+
+
+np.random.seed(0)
+x = np.random.randn(100)
+y = np.random.randn(100)
+
+fig, axs = plt.subplots(2, 2, figsize=(10, 8))
+
+axs[0, 0].scatter(x, y, color='blue', alpha=0.5)
+axs[0, 0].set_title('Scatter Plot')
+axs[0, 0].set_xlabel('X')
+axs[0, 0].set_ylabel('Y')
+
+axs[0, 1].hist(x, bins=20, color='green', alpha=0.7)
+axs[0, 1].set_title('Histogram')
+axs[0, 1].set_xlabel('Value')
+axs[0, 1].set_ylabel('Frequency')
+
+plt.tight_layout()
+
 plt.show()
